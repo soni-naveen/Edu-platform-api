@@ -12,22 +12,22 @@
    ```
 3. Set up environment variables:
 
-```
-PORT=4000
-DATABASE_URL=<your mongodb url>
-```
+   ```
+   PORT=4000
+   DATABASE_URL=<your mongodb url>
+   ```
 
 4. Run the Project
 
-Start the server:
+   Start the server:
+   
+   ```
+   node index.js [or nodemon index.js]
+   ```
 
-```
-node index.js
-```
+## Example API Endpoints
 
-### Example API Endpoints
-
-#### Course Endpoints
+### Course Endpoints
 
 ● POST **/api/courses** – Create a course
 
@@ -39,7 +39,7 @@ node index.js
 
 ● DELETE **/api/courses/:id** – Delete a course
 
-#### Quiz Endpoints
+### Quiz Endpoints
 
 ● POST **/api/courses/:courseId/quizzes** – Create a quiz for a course
 
