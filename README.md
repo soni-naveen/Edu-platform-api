@@ -12,23 +12,12 @@
    ```
 3. Set up environment variables:
 
-Create a .env file in the root directory.
-
-Add the following variables:
-
 ```
-PORT=5000
+PORT=4000
 DATABASE_URL=<your mongodb url>
 ```
 
-4. Create a `.gitignore` file and paste the following:
-
-```gitignore
-node_modules
-.env
-```
-
-5. Run the Project
+4. Run the Project
 
 Start the server:
 
