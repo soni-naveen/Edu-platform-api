@@ -14,7 +14,7 @@
 
    ```
    PORT=4000
-   DATABASE_URL=<your mongodb url>
+   DATABASE_URL= mongodb://localhost:27017/<database>
    ```
 
 4. Run the Project
