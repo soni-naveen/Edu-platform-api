@@ -1,4 +1,4 @@
-# Educational Platform API
+# Educational Platform API - Naveen Soni
 
 ## Setup Instructions
 
