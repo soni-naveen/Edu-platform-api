@@ -1,5 +1,7 @@
 # Educational Platform API - Naveen Soni
 
+## API Documentation : https://documenter.getpostman.com/view/34287184/2sAYQiC8dm
+
 ## Setup Instructions
 
 1. Clone the repository:
