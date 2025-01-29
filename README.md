@@ -4,7 +4,7 @@
 
 1. Clone the repository:
    ```
-   git clone https://github.com/soni-naveen/edu-platform.git
+   git clone https://github.com/soni-naveen/Edu-platform-api
    ```
 2. Install dependencies:
    ```
