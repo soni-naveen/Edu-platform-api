@@ -5,7 +5,10 @@ exports.createQuiz = async (req, res) => {
   try {
     const quiz = new Quiz({ ...req.body, courseId: req.params.courseId });
     await quiz.save();
-    res.status(201).json(quiz);
+    res.status(201).json({
+      message: "Quiz successfully created",
+      quiz,
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -15,7 +18,12 @@ exports.createQuiz = async (req, res) => {
 exports.getQuizzesByCourseId = async (req, res) => {
   try {
     const quizzes = await Quiz.find({ courseId: req.params.courseId });
-    res.status(200).json(quizzes);
+    if (!quizzes) {
+      return res.status(404).json({
+        error: "Quiz not found",
+      });
+    }
+    res.res.status(200).json(quizzes);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -26,7 +34,9 @@ exports.getQuizById = async (req, res) => {
   try {
     const quiz = await Quiz.findById(req.params.id);
     if (!quiz) {
-      return res.status(404).json({ error: "Quiz not found" });
+      return res.status(404).json({
+        error: "Quiz not found",
+      });
     }
     res.status(200).json(quiz);
   } catch (err) {
@@ -41,9 +51,14 @@ exports.updateQuiz = async (req, res) => {
       new: true,
     });
     if (!quiz) {
-      return res.status(404).json({ error: "Quiz not found" });
+      return res.status(404).json({
+        error: "Quiz not found",
+      });
     }
-    res.status(200).json(quiz);
+    res.status(200).json({
+      message: "Quiz successfully updated",
+      quiz,
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -54,9 +69,13 @@ exports.deleteQuiz = async (req, res) => {
   try {
     const quiz = await Quiz.findByIdAndDelete(req.params.id);
     if (!quiz) {
-      return res.status(404).json({ error: "Quiz not found" });
+      return res.status(404).json({
+        error: "Quiz not found",
+      });
     }
-    res.status(204).json();
+    res.status(200).json({
+      message: "Quiz successfully deleted",
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

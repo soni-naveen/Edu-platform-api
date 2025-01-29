@@ -5,7 +5,10 @@ exports.createCourse = async (req, res) => {
   try {
     const course = new Course(req.body);
     await course.save();
-    res.status(201).json(course);
+    res.status(201).json({
+      message: "Course successfully created",
+      course,
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -26,7 +29,9 @@ exports.getCourseById = async (req, res) => {
   try {
     const course = await Course.findById(req.params.id);
     if (!course) {
-      return res.status(404).json({ error: "Course not found" });
+      return res.status(404).json({
+        error: "Course not found",
+      });
     }
     res.status(200).json(course);
   } catch (err) {
@@ -41,9 +46,14 @@ exports.updateCourse = async (req, res) => {
       new: true,
     });
     if (!course) {
-      return res.status(404).json({ error: "Course not found" });
+      return res.status(404).json({
+        error: "Course not found",
+      });
     }
-    res.status(200).json(course);
+    res.status(200).json({
+      message: "Course successfully updated",
+      course,
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
@@ -54,9 +64,13 @@ exports.deleteCourse = async (req, res) => {
   try {
     const course = await Course.findByIdAndDelete(req.params.id);
     if (!course) {
-      return res.status(404).json({ error: "Course not found" });
+      return res.status(404).json({
+        error: "Course not found",
+      });
     }
-    res.status(204).json();
+    res.status(200).json({
+      message: "Course successfully deleted",
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
