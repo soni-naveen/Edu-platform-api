@@ -1,4 +1,4 @@
-# Educational Platform API - Naveen Soni
+# Educational Platform API
 
 ### Tech Stack : ExpressJs , MongoDB
 
