@@ -1,6 +1,6 @@
 # Educational Platform API
 
-### Tech Stack : ExpressJs , MongoDB
+### Tech Stack : ExpressJs , MongoDB 
 
 #### API Documentation : https://documenter.getpostman.com/view/34287184/2sAYQiC8dm
 
